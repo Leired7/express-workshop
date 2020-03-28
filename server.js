@@ -8,6 +8,11 @@ var express = require("express");
 /* Iniciar el servidor */
 var app = express();
 
+//Middleware de Express que extraerá los datos del formulario del request
+var formidable = require("express-formidable");
+
+app.use(formidable());
+
 //Elegir un puerto por el que nuestro servidor escuchará
 //Hay que usar el método app.listen (un puerto, una función callback (respuesta))
 
@@ -20,5 +25,5 @@ app.listen(3000, function() {
 app.use(express.static("public"));
 
 app.post("/create-post", function(req, res) {
-  console.log("/create-post");
+  console.log(req.fields);
 });

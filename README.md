@@ -86,3 +86,19 @@ Los datos no llegan al servidor de una pasada, fluyen al servidor como un stream
 Express se encarga de recolectar el stream de forma apropiada
 
 Hay que definir la ruta que va a manejar las requests que vengan a través del endpoint /create-post
+
+/_Extraer la entrada del blog_/
+
+Encontar la entrada de blog (Hacer "handler function" para /create-post)
+
+Los contenidos de mi entrada de blog están ocultos en tu objeto req en alguna parte. Normalmente lo extraerías de req.body
+
+console.log(req.body) //undefined
+
+Cuando los datos se han mandado por POST al servidor en forma de FormData (Datos enviados a través del formulario) hay que acceder a los datos a través de un función middleware.
+
+express-formidable -- es un middleware de Express (extraerá los datos del formulario del request y hará que estén disponibles al hacer req.fields)
+
+---Instalar express-formidable [npm install express-formidable --save] Después hacer require a la librería express-formidable
+
+> > consola -- se ve un objeto. La key(clave) es blogpost (como el atributo name del formulario). El valor de blogpost es mi mensaje
