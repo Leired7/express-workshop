@@ -17,36 +17,4 @@ app.listen(3000, function() {
   console.log("Server is listening on port 3000. Ready to acept requests!");
 });
 
-// Handler function - es un función que recibe requests y las maneja (request alcanza el servidor y hace falta una forma de responder)
-
-//request - mensaje enviado vía HTTP desde el cliente al servidor pidiendo información
-
-// "handler function" siempre toma una request y objeto response, y manda la respuesta de vuelta al cliente con información
-
-/* El método get() se usa para definir una "handler function"(Express).
-Necesita dos parámetros: ·endpoint que va disparar la acción y · "handler function" indica exactamente qué hay que hacer */
-
-app.get("/", function(req, res) {
-  /* "handler function envíe de vuelta un mensaje a le cliente". Usar el método de Express send() */
-  res.send("Yay Node Girls!");
-});
-
-// Mi servidor sólo hace una cosa. Al recibir una request desde el endpoint raíz /, manda de vuelta la misma response: "Yay Node Girls!"
-
-//Usando los endpoints, puedo conseguir que el servidor mande diferentes response para diferentes requests. Este concepto se denomina routing
-
-//Endpoint - la parte de la URL que viene después de /. Es la URL a la que mandas la request
-
-/* Crear endpoints propios y mandar diferentes responses */
-
-app.get("/chocolate", function(req, res) {
-  res.send("Mm chocolate :O");
-});
-
-app.get("/node", function(req, res) {
-  res.send("Taller de Nodejs y Express");
-});
-
-app.get("/girls", function(req, res) {
-  res.send("Go Node-Girls!!");
-});
+app.use(express.static("public"));
