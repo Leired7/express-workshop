@@ -18,3 +18,7 @@ app.listen(3000, function() {
 });
 
 app.use(express.static("public"));
+
+app.post("/create-post", function(req, res) {
+  console.log("/create-post");
+});

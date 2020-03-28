@@ -33,8 +33,10 @@ console.log("Server is listening on port 3000. Ready to acept requests!");
 
 // "handler function" siempre toma una request y objeto response, y manda la respuesta de vuelta al cliente con información
 
-/_ El método get() se usa para definir una "handler function"(Express).
-Necesita dos parámetros: ·endpoint que va disparar la acción y · "handler function" indica exactamente qué hay que hacer _/
+/\_ El método get() se usa para recuperar información que tiene el servidor
+
+para definir una "handler function"(Express).
+Necesita dos parámetros: ·endpoint que va disparar la acción y · "handler function" indica exactamente qué hay que hacer \_/
 
 app.get("/", function(req, res) {
 /_ "handler function envíe de vuelta un mensaje a le cliente". Usar el método de Express send() _/
@@ -60,3 +62,27 @@ res.send("Taller de Nodejs y Express");
 app.get("/girls", function(req, res) {
 res.send("Go Node-Girls!!");
 });
+
+//Métodos HTTP request (principales métodos): GET, POST, PUT, PATCH Y DELETE
+
+/_Método HTTP request POST_/
+
+// Mandar datos al servidor, método HTTP request POST
+
+//Añadir formulario para que pueda escribir los artículos del blog desde ahí.
+
+//·formulario textarea y botón enviar
+//· atributo action es el endpoint a donde los datos del formulario se van a enviar
+//· atributo name será usado más tarde para hacer referencia a los datos.
+
+//Al pulsar enviar, el formulario enviará un request por POST al servidor, usando lo que ponga en el atributo action como endpoint ("/create-post")
+
+//server.js -- escribir código para manejar los request que vengan al endpoint (POST /create-post)
+
+/_Recibiendo el artículo del blog en el servidor_/
+
+Los datos no llegan al servidor de una pasada, fluyen al servidor como un stream (agura fluyendo de un grifo a un cubo)
+
+Express se encarga de recolectar el stream de forma apropiada
+
+Hay que definir la ruta que va a manejar las requests que vengan a través del endpoint /create-post
