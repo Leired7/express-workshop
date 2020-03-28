@@ -1,0 +1,38 @@
+{
+  "name": "bitacoradiversa",
+  "version": "1.0.0",
+  "description": "Anotaciones dispersas de aprendizajes en la red gracias a las contribucciones de personas diversas a la comunidad. Código artesanal: HTML5, CSS3, NodeJS, Express... por ahora $;-)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Leired7/express-workshop.git"
+  },
+  "keywords": [
+    "Diversidad",
+    "Tecnología",
+    "ColectivosInfrarepresentados",
+    "LenguajesDeProgramación",
+    "HTML5",
+    "CSS3",
+    "JavaScript",
+    "Nodejs",
+    "Express",
+    "ParadigmasDeProgramación",
+    "CompartirConLaComunidad",
+    "¡Gracias",
+    "a",
+    "todes!"
+  ],
+  "author": "Leire Díez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Leired7/express-workshop/issues"
+  },
+  "homepage": "https://github.com/Leired7/express-workshop#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
