@@ -13,6 +13,14 @@ var formidable = require("express-formidable");
 
 app.use(formidable());
 
+//usar fs
+var fs = require("fs");
+
+fs.readFile(__dirname + "/data/posts.json", function(error, file) {
+  //convertir JSON  objeto JS
+  var parsedFile = JSON.parse(file);
+  console.log(file.toString());
+});
 //Elegir un puerto por el que nuestro servidor escuchará
 //Hay que usar el método app.listen (un puerto, una función callback (respuesta))
 
@@ -25,5 +33,25 @@ app.listen(3000, function() {
 app.use(express.static("public"));
 
 app.post("/create-post", function(req, res) {
-  console.log(req.fields);
+  console.log("soy req.fields", req.fields);
 });
+
+/* let examplePost = {[timestamp]: [blog post message]};
+ */
+
+//Guardando en el disco duro
+/* fs.writeFile(__dirname + 'data/post.json', examplePost,function(error
+){
+  if(error){
+    console.log(error);
+  }else {
+    console.log(`${timestamp} was added successfully`)
+  }
+})
+ */
+//Leer datos en el disco duro
+
+/* fs.readFile('locationOfTheFile', function(error, file){
+
+})
+ */

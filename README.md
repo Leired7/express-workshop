@@ -101,4 +101,46 @@ express-formidable -- es un middleware de Express (extraerá los datos del formu
 
 ---Instalar express-formidable [npm install express-formidable --save] Después hacer require a la librería express-formidable
 
-> > consola -- se ve un objeto. La key(clave) es blogpost (como el atributo name del formulario). El valor de blogpost es mi mensaje
+<<consola -- se ve un objeto. La key(clave) es blogpost (como el atributo name del formulario). El valor de blogpost es mi mensaje>>
+
+/_JSON - Un formato de datos prácticos_/
+
+Tipo de archivos para estructurar datos en un formato legible. También muy popular para mandar datos a través de internet.
+Representación en string de objetos javascript.
+
+Los objetos JSON se convierten de forma muy sencilla a objetos javascript, con JSON.parse() y viceversa, JSON.stringfy()
+
+post.json---
+{ [timestamp]: [blog post message]}
+
+timestamp como clave para que los artículos se muestren en orden cronológico, también registra la fecha de creación
+
+Para hacer un timestamp basta con hacer: Date.now()
+
+/_Guardando en tu disco duro_/
+
+Para guardar los datos, cada vez que un artículo llegue al servidor -- se necesita un módulo incorporado en Nodejs: fs, file system
+
+Los módulos incorporados de Nodejs (módulo del core) son parecidos a las funciones middleware incorporadas en Express.
+
+Para usar fs, hay que require en tu servidor:
+
+var fs = require('fs');
+
+fs.writeFile usa 3 argumentos:
+·Arg1 - localización del archivo que quieres escribir
+·Arg2 - los datos que quieres recibir
+·Arg3 - la función callback
+
+/_Leer datos que ya existen fs.readFile_/
+fs.writeFile usa 2 argumentos:
+·Arg1 - localización del archivo que quieres escribir
+·Arg2 - la función callback (2Arg: el 2º argumento es el archivo que quieres leer)
+
+\_\_dirname es un objeto globarl de Node que te da la ruta de a tu directorio raíz actual. (útil para evitar rutas dinámicas o largas)
+
+formato llamado buffer- para hacerlo legible hay que convertilo a string (toString())
+
+/_Convertir un JSON a un objeto Javascript_/
+
+El archivo file está en formato JSON ahora mismo. Si queremos acceder a los artículos que se encuentran dentro del mismo, necesitamos convertirlo de JSON a un objeto Javascript
